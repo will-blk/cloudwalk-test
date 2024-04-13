@@ -10,6 +10,7 @@ module Cloudwalk
     def initialize
       @matches = []
       @players = {}
+      @world = Struct.new(:name).new("<world>")
     end
 
     def create_match
@@ -20,6 +21,8 @@ module Cloudwalk
     end
 
     def find_or_create_player(player_name)
+      return @world if player_name == "<world>"
+
       players[player_name] ||= Player.new(player_name)
       players[player_name]
     end
