@@ -6,7 +6,7 @@ require_relative "cloudwalk/file/parser"
 module Cloudwalk
   class Error < StandardError; end
 
-  class Cli
+  class Test
     def self.run(file)
       parser = Cloudwalk::File::Parser.new(file)
       game = parser.parse

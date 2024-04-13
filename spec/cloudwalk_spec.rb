@@ -6,7 +6,7 @@ RSpec.describe Cloudwalk do
   end
 
   describe ".run" do
-    subject(:run) { described_class::Cli.run("spec/fixtures/logs/file_4.log") }
+    subject(:run) { described_class::Test.run("spec/fixtures/logs/file_4.log") }
 
     let(:report1) do
       {
