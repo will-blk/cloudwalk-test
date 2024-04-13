@@ -4,12 +4,13 @@ require_relative "player"
 
 module Cloudwalk
   class Match
-    attr_reader :id, :players, :world_kills
+    attr_reader :id, :players, :kills, :world_kills
 
     def initialize(id)
       @id = id
       @players = []
       @world_kills = 0
+      @kills = Hash.new(0)
     end
 
     def add_player(player)
@@ -19,6 +20,7 @@ module Cloudwalk
     def add_kill(killer, killed)
       return add_world_kill(killed) if killer.name == "<world>"
 
+      kills[killer.name] += 1
       killer.add_kill
       killed.add_death
     end
@@ -33,12 +35,6 @@ module Cloudwalk
       }
     end
 
-    def kills
-      players.each_with_object({}) do |player, kills|
-        kills[player.name] = player.kills
-      end
-    end
-
     def total_kills
       kills.values.sum + world_kills
     end
@@ -47,6 +43,7 @@ module Cloudwalk
 
     def add_world_kill(killed)
       @world_kills += 1
+
       killed.add_death
     end
   end

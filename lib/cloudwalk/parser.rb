@@ -36,9 +36,10 @@ module Cloudwalk
     end
 
     def handle_kill(line)
-      killer, killed = line.match(/(\w+|<world>) killed (\w+)/)[1, 2]
-      killer_player = game.find_or_create_player(killer)
-      killed_player = game.find_or_create_player(killed)
+      killer, killed = line.match(/\d: (.*) killed (.+) by/)[1, 2]
+      killer_player = game.find_player(killer)
+      killed_player = game.find_player(killed)
+
       current_match.add_kill(killer_player, killed_player)
     end
   end

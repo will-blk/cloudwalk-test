@@ -20,11 +20,14 @@ module Cloudwalk
       match
     end
 
-    def find_or_create_player(player_name)
+    def find_player(player_name)
       return @world if player_name == "<world>"
 
-      players[player_name] ||= Player.new(player_name)
       players[player_name]
+    end
+
+    def find_or_create_player(player_name)
+      find_player(player_name) || players[player_name] = Player.new(player_name)
     end
   end
 end
