@@ -6,6 +6,7 @@ RSpec.describe Cloudwalk do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    game = Cloudwalk::Parser.new("spec/fixtures/quake.log").parse
+    byebug
   end
 end
