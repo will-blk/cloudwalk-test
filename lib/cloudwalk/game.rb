@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require_relative "match"
+require_relative "player"
+
 module Cloudwalk
   class Game
     attr_reader :matches, :players
