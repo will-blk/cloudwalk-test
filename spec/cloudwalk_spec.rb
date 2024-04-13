@@ -17,6 +17,12 @@ RSpec.describe Cloudwalk do
             "Assasinu Credi" => 5,
             "Isgalamido" => 2,
             "Zeh" => 2
+          },
+          kills_by_means: {
+            "MOD_RAILGUN" => 1,
+            "MOD_ROCKET" => 4,
+            "MOD_ROCKET_SPLASH" => 4,
+            "MOD_TRIGGER_HURT" => 5
           }
         }
       }
@@ -44,6 +50,15 @@ RSpec.describe Cloudwalk do
             "Maluquinho" => 1,
             "Oootsimo" => 9,
             "Zeh" => 8
+          },
+          kills_by_means: {
+            "MOD_FALLING" => 1,
+            "MOD_MACHINEGUN" => 1,
+            "MOD_RAILGUN" => 2,
+            "MOD_ROCKET" => 5,
+            "MOD_ROCKET_SPLASH" => 13,
+            "MOD_SHOTGUN" => 4,
+            "MOD_TRIGGER_HURT" => 3
           }
         }
       }
