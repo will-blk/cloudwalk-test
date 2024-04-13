@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Cloudwalk::Parser do
+RSpec.describe Cloudwalk::File::Parser do
   subject(:parser) { described_class.new("spec/fixtures/logs/#{file}") }
 
   describe "#parse" do
@@ -10,7 +10,7 @@ RSpec.describe Cloudwalk::Parser do
       let(:file) { "file_1.log" }
 
       it "returns a game instance" do
-        expect(game).to be_a(Cloudwalk::Game)
+        expect(game).to be_a(Cloudwalk::Model::Game)
       end
 
       it "has the correct number of kills" do
