@@ -23,6 +23,10 @@ module Cloudwalk
       kills[killer] += 1
     end
 
+    def total_kills
+      kills.values.sum + world_kills
+    end
+
     def report
       {
         "game_#{id}" => {
@@ -38,10 +42,6 @@ module Cloudwalk
     def add_world_kill(killed)
       @world_kills += 1
       kills[killed] -= 1
-    end
-
-    def total_kills
-      kills.values.sum + world_kills
     end
   end
 end
