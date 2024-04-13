@@ -29,5 +29,9 @@ module Cloudwalk
     def find_or_create_player(player_name)
       find_player(player_name) || players[player_name] = Player.new(player_name)
     end
+
+    def report
+      matches.map(&:report)
+    end
   end
 end
